@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: GW-pigeonGateway
+          uri: http://192.168.56.101:8080/api/customers
+          predicates:
+            - Path=/api/customers
